@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import MenuBar from './components/MenuBar';
-import Home from './components/Home';
-import AddPlayer from './components/AddPlayer';
-import ViewPlayers from './components/ViewPlayers';
+import MenuBar from './Components/MenuBar';
+import Home from './Components/Home';
+import AddPlayer from './Components/AddPlayer';
+import ViewPlayers from './Components/ViewPlayers';
 import { Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
