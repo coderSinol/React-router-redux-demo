@@ -19,5 +19,5 @@ function addPlayer(player) {
 
 function viewPlayers(){
   var players = JSON.parse(localStorage.getItem('players'));
-  return players;
+  return players === null ? [] : players;
 }

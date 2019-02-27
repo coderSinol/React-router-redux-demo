@@ -27,7 +27,7 @@ class ViewPlayers extends React.Component {
         <h1>All players</h1>
         <div>
           <table className={classes.tableContainer} style={{display:players.length === 0 ? 'none' : ''}}>
-            <thead className="blue-grey lighten-4">
+            <thead>
               <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
