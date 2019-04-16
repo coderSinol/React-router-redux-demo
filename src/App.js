@@ -6,8 +6,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuBar from './Components/MenuBar';
 import Home from './Components/Home';
-import AddPlayer from './Components/AddPlayer';
-import ViewPlayers from './Components/ViewPlayers';
+import AddStudent from './Components/AddStudent';
+import ViewStudents from './Components/ViewStudents';
 import { Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
@@ -21,8 +21,8 @@ class App extends Component {
         <Router history={history}>
           <div>
             <Route exact path="/" component={Home} />
-            <Route exact path="/add-player" component={AddPlayer} />
-            <Route exact path="/view-players" component={ViewPlayers} />
+            <Route exact path="/add-student" component={AddStudent} />
+            <Route exact path="/view-students" component={ViewStudents} />
           </div>
         </Router>
       </div>

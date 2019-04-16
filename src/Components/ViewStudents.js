@@ -16,31 +16,33 @@ class ViewPlayers extends React.Component {
 
   componentDidMount(){
     const { dispatch } = this.props;
-    dispatch(allActions.viewPlayers());
+    dispatch(allActions.viewStudents());
   }
 
   render() {
-    const {classes, players } = this.props;
+    const {classes, students } = this.props;
     return (
       <div>
         <MenuBar/>
-        <h1>All players</h1>
+        <h1>All students</h1>
         <div>
-          <table className={classes.tableContainer} style={{display:players.length === 0 ? 'none' : ''}}>
+          <table className={classes.tableContainer} style={{display:(students.length === 0 || students === undefined) ? 'none' : ''}}>
             <thead>
               <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Country</th>
+                <th>Course</th>
               </tr>
             </thead>
             <tbody>
-              {players.map(( player, index ) => {
+              {students.map(( student, index ) => {
                 return (
                   <tr>
-                    <td>{player.firstName}</td>
-                    <td>{player.firstName}</td>
-                    <td>{player.firstName}</td>
+                    <td>{student.firstName}</td>
+                    <td>{student.lastName}</td>
+                    <td>{student.country}</td>
+                    <td>{student.course}</td>
                   </tr>
                 );
               })}
@@ -57,9 +59,9 @@ ViewPlayers.propTypes = {
 };
 
 function mapStateToProps(state) {
-    const { players } = state.viewPlayers;
+    const { students } = state.viewStudents;
     return {
-        players
+        students
     };
 }
 

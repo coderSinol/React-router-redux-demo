@@ -1,23 +1,23 @@
 
 export const allServices = {
-    addPlayer,
-    viewPlayers
+    addStudent,
+    viewStudents
 };
 
-function addPlayer(player) {
-  if (player) {
-      var players = JSON.parse(localStorage.getItem('players'));
-      if(players === null){
-        players = [];
+function addStudent(student) {
+  if (student) {
+      var students = JSON.parse(localStorage.getItem('students'));
+      if(students === null){
+        students = [];
       }
-      players.push(player);
-      localStorage.setItem('players', JSON.stringify(players));
-      return player;
+      students.push(student);
+      localStorage.setItem('students', JSON.stringify(students));
+      return student;
   }
   return null;
 }
 
-function viewPlayers(){
-  var players = JSON.parse(localStorage.getItem('players'));
-  return players === null ? [] : players;
+function viewStudents(){
+  var students = JSON.parse(localStorage.getItem('students'));
+  return students === null ? [] : students;
 }

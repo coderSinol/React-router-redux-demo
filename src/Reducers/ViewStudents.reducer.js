@@ -1,16 +1,16 @@
 import { allConstants } from '../Constants/AllConstants';
 
-const initialState = { players: []};
+const initialState = { students: []};
 
-export function viewPlayers(state = initialState, action) {
+export function viewStudents(state = initialState, action) {
 
   switch (action.type) {
     case allConstants.VIEW_ALL_PLAYERS_REQUEST:
-      return { players: [] };
+      return { students: [] };
     case allConstants.VIEW_ALL_PLAYERS_SUCCESS:
-      return { players: action.players};
+      return { students: action.students};
     case allConstants.VIEW_ALL_PLAYERS_FAILURE:
-      return { players: [] };
+      return { students: [] };
     default:
       return state
   }

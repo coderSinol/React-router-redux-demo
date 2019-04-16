@@ -30,7 +30,8 @@ class AddPlayer extends React.Component {
       this.state = {
           firstName: '',
           lastName: '',
-          country: ''
+          country: '',
+          course:''
       };
   }
 
@@ -40,39 +41,41 @@ class AddPlayer extends React.Component {
 
   handleSubmit(e) {
       e.preventDefault();
-      const { firstName, lastName, country } = this.state;
       const { dispatch } = this.props;
-      dispatch(allActions.addPlayer(this.state));
+      dispatch(allActions.addStudent(this.state));
       this.setState({
           firstName: '',
           lastName: '',
-          country: ''
+          country: '',
+          course:''
       });
 
   }
 
   render() {
-    const { classes, player, allPlayers } = this.props;
+    const { classes, student } = this.props;
     return (
       <div>
         <MenuBar/>
-        <h1>Add new player</h1>
+        <h1>Add new student</h1>
         <form onSubmit={(e)=>this.handleSubmit(e)}>
           <TextField name="firstName" value={this.state.firstName} label="First Name" className={classes.input} inputProps={{'aria-label': 'Description',}} onChange={(e)=>this.handleChange(e)}/>
           <TextField name="lastName" value={this.state.lastName} label="Last Name" className={classes.input} inputProps={{'aria-label': 'Description',}} onChange={(e)=>this.handleChange(e)}/>
           <TextField name="country" value={this.state.country} label="Country" className={classes.input} inputProps={{'aria-label': 'Description',}} onChange={(e)=>this.handleChange(e)}/>
+          <TextField name="course" value={this.state.course} label="Course" className={classes.input} inputProps={{'aria-label': 'Description',}} onChange={(e)=>this.handleChange(e)}/>
           <div>
             <Button type="submit" variant="contained" color="primary" className={classes.button}>
-              Add Player
+              Add Student
             </Button>
           </div>
         </form>
-        <div className={classes.gapSmall} style={{display:Object.keys(player).length === 0 ? 'none' : ''}}>
-          <h3>Last added player</h3>
+        <div className={classes.gapSmall} style={{display:Object.keys(student).length === 0 ? 'none' : ''}}>
+          <h3>Last added student</h3>
           <span>
-            <p>{'First Name: ' + player.firstName}</p>
-            <p>{'Last Name: ' + player.lastName}</p>
-            <p>{'Country: ' + player.country}</p>
+            <p>{'First Name: ' + student.firstName}</p>
+            <p>{'Last Name: ' + student.lastName}</p>
+            <p>{'Country: ' + student.country}</p>
+            <p>{'Course: ' + student.course}</p>
           </span>
         </div>
       </div>
@@ -85,9 +88,9 @@ AddPlayer.propTypes = {
 };
 
 function mapStateToProps(state) {
-    const { player, allPlayers } = state.crudPlayer;
+    const { student } = state.crudStudent;
     return {
-        player, allPlayers
+        student
     };
 }
 

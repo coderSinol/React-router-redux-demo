@@ -2,28 +2,28 @@ import {allConstants} from '../Constants/AllConstants.js';
 import {allServices} from '../Services/AllServices.js';
 
 export const allActions = {
-    addPlayer,
-    viewPlayers
+    addStudent,
+    viewStudents
 };
 
-function addPlayer(player) {
+function addStudent(student) {
   return dispatch => {
-      dispatch(request(player));
-      allServices.addPlayer(player);
-      dispatch(success(player));
+      dispatch(request(student));
+      allServices.addStudent(student);
+      dispatch(success(student));
   };
-  function request(player) { return { type: allConstants.ADD_PLAYER_REQUEST, player } }
-  function success(player) { return { type: allConstants.ADD_PLAYER_SUCCESS, player } }
+  function request(student) { return { type: allConstants.ADD_PLAYER_REQUEST, student } }
+  function success(student) { return { type: allConstants.ADD_PLAYER_SUCCESS, student } }
   function failure(error) { return { type: allConstants.ADD_PLAYER_FAILURE, error } }
 }
 
-function viewPlayers() {
+function viewStudents() {
   return dispatch => {
       dispatch(request());
-      var players = allServices.viewPlayers();
-      dispatch(success(players));
+      var students = allServices.viewStudents();
+      dispatch(success(students));
   };
   function request() { return { type: allConstants.VIEW_ALL_PLAYERS_REQUEST } }
-  function success(players) { return { type: allConstants.VIEW_ALL_PLAYERS_SUCCESS, players } }
+  function success(students) { return { type: allConstants.VIEW_ALL_PLAYERS_SUCCESS, students } }
   function failure(error) { return { type: allConstants.VIEW_ALL_PLAYERS_FAILURE, error } }
 }

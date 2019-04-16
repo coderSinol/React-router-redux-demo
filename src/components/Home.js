@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
       <div>
         <MenuBar/>
-        <h1>Welcome to the Tournament</h1>
+        <h1>Welcome to the Student Registration</h1>
       </div>
     );
   }

@@ -1,16 +1,16 @@
 import { allConstants } from '../Constants/AllConstants';
 
-const initialState = { player: {}};
+const initialState = { student: {}};
 
-export function crudPlayer(state = initialState, action) {
+export function crudStudent(state = initialState, action) {
 
   switch (action.type) {
     case allConstants.ADD_PLAYER_REQUEST:
-      return { player: {} };
+      return { student: {} };
     case allConstants.ADD_PLAYER_SUCCESS:
-      return { player: action.player};
+      return { student: action.student};
     case allConstants.ADD_PLAYER_FAILURE:
-      return { player: {} };
+      return { student: {} };
     default:
       return state
   }

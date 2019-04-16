@@ -20,8 +20,8 @@ class MenuBar extends React.Component {
         <AppBar position="static">
           <Toolbar>
             <a className={classes.menuItem} href="/">Home</a>
-            <a className={classes.menuItem} href="/add-player">Add Player</a>
-            <a className={classes.menuItem} href="/view-players">View Players</a>
+            <a className={classes.menuItem} href="/add-student">Add Student</a>
+            <a className={classes.menuItem} href="/view-students">View Students</a>
           </Toolbar>
         </AppBar>
       </div>
